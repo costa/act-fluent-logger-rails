@@ -161,14 +161,6 @@ module ActFluentLoggerRails
       @fluent_logger.close
     end
 
-    def level
-      @level
-    end
-
-    def level=(l)
-      @level = l
-    end
-
     private
 
     def add_tags
