@@ -82,7 +82,8 @@ module ActFluentLoggerRails
 
   class FluentLogger < ActiveSupport::Logger
     def initialize(options, level, log_tags)
-      self.level = level
+      super(level: level)
+
       port    = options[:port]
       host    = options[:host]
       nanosecond_precision = options[:nanosecond_precision]
