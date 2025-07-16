@@ -7,6 +7,6 @@ TESTER=${1:-tester}
 export COMPOSE_FILE=spec/docker-compose.yml
 export COMPOSE_PROJECT_NAME=act-fluent-logger-rails_dev
 
-docker-compose rm -svf
-docker-compose build --pull --force-rm
-docker-compose run "$TESTER" && docker-compose rm -svf || docker-compose logs
+docker compose --compatibility rm -svf
+docker compose --compatibility build --force-rm
+docker compose --compatibility run --rm --remove-orphans "$TESTER" && docker compose --compatibility rm -svf || docker compose --compatibility logs

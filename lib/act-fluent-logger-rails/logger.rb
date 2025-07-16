@@ -82,7 +82,7 @@ module ActFluentLoggerRails
 
   class FluentLogger < ActiveSupport::Logger
     def initialize(options, level, log_tags)
-      super(level: level)
+      super(nil, level: level)
 
       port    = options[:port]
       host    = options[:host]
